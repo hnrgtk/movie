@@ -3,12 +3,12 @@ import { Text } from "@chakra-ui/layout";
 
 export const MenuItem: React.FC = ({ children }) => (
   <Text
-    color="red"
+    color="gray.200"
     cursor="pointer"
-    fontWeight="600"
+    fontWeight="500"
     transition="0.3s"
     _hover={{
-			color: "white",
+			color: "red.500",
       transition: "0.3s",
     }}
   >

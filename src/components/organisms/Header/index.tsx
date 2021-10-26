@@ -1,10 +1,11 @@
 import React from "react";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Box, Flex } from "@chakra-ui/layout";
+import { Box, Flex, HStack } from "@chakra-ui/layout";
 import { Logo } from "../../atoms/Logo";
 import { MenuList } from "../../molecules/MenuList";
 import { SearchBar } from "../../atoms/SearchBar";
+import { NotificationButton } from "../../atoms/NotificationButton";
 
 export const Header: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -35,10 +36,13 @@ export const Header: React.FC = () => {
           ],
         }}
       />
-      <Box display={{ base: "none", md: "block" }}>
-        <SearchBar />
-      </Box>
-      {/* <NotificationButton /> */}
+
+      <HStack spacing="4">
+        <Box display={{ base: "none", md: "block" }}>
+          <SearchBar />
+        </Box>
+        <NotificationButton />
+      </HStack>
     </Flex>
   );
 };

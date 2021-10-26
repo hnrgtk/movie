@@ -15,6 +15,8 @@ export const Logo: React.FC<Props> = ({
   height = "40px",
 }) => (
   <Center mr={5}>
-    <Image {...{ src, width, height, alt: "Logo Darkflix" }} />
+    <Image
+      {...{ src, width, height, alt: "Logo Darkflix", draggable: false }}
+    />
   </Center>
 );
