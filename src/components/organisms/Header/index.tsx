@@ -36,7 +36,6 @@ export const Header: React.FC = () => {
           ],
         }}
       />
-
       <HStack spacing="4">
         <Box display={{ base: "none", md: "block" }}>
           <SearchBar />

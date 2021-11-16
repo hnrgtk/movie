@@ -1,23 +1,33 @@
 import React from "react";
 import Image from "next/image";
 import {
+  Box,
+  Divider,
   IconButton,
   Menu,
   MenuButton,
-  MenuItem,
+  MenuDivider,
   MenuList,
+  Text
 } from "@chakra-ui/react";
 
-import {
-  AddIcon,
-  ExternalLinkIcon,
-  RepeatIcon,
-  EditIcon,
-} from "@chakra-ui/icons";
+
+import { NotificationInfo } from "../../molecules/NotificationInfo";
 
 import NotificationIcon from "../../../../public/assets/notification.svg";
 
 export const NotificationButton = () => {
+
+  const mock = [
+    { title: "Uma Noite Alucinante: A Morte do Demônio", wasAddedAt: "25 minutos" },
+    { title: "Jason X", wasAddedAt: "30 minutos" },
+    { title: "The Lighthouse", wasAddedAt: "1 dia" },
+    { title: "The Nightmare On Elm Street", wasAddedAt: "1 semana" },
+    { title: "Freddy vs Jason", wasAddedAt: "1 semana" },
+    { title: "Fome Animal", wasAddedAt: "1 semana" },
+    { title: "Phantasm", wasAddedAt: "2 semanas" },
+    { title: "Boxing Helena", wasAddedAt: "2 semanas" },
+  ]
   return (
     <Menu>
       <MenuButton
@@ -40,19 +50,20 @@ export const NotificationButton = () => {
         }
         variant="unstyled"
       />
-      <MenuList>
-        <MenuItem icon={<AddIcon />} command="⌘T">
-          New Tab
-        </MenuItem>
-        <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
-          New Window
-        </MenuItem>
-        <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
-          Open Closed Tab
-        </MenuItem>
-        <MenuItem icon={<EditIcon />} command="⌘O">
-          Open File...
-        </MenuItem>
+      <MenuList bg="black" padding="2.5">
+        <Text color="red.500">Notificações</Text>
+        <MenuDivider />
+        <Box overflowY="scroll" maxHeight="260px">
+          {
+            mock.map(data => (
+              <>
+                <NotificationInfo {...data} />
+                <Divider />
+              </>
+            ))
+          }
+        </Box>
+
       </MenuList>
     </Menu>
   );
