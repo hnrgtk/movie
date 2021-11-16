@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
       align="center"
       justify="space-between"
       width="100%"
-      wrap="wrap"
+      height="4.2rem"
       padding={5}
       bg="black"
       color="white"
@@ -29,10 +29,10 @@ export const Header: React.FC = () => {
           isOpen,
           items: [
             "Início",
-            "Recomendados",
-            "Categorias",
-            "Tendências",
+            "Minha Lista",
             "Novidades",
+            "Tendências",
+            "Recomendados",
           ],
         }}
       />
